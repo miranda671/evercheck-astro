@@ -24,7 +24,6 @@ function formatDate(date: Date) {
 .page-hero h1{font-size:42px;font-weight:700;letter-spacing:-.8px;margin-bottom:16px;}
 .page-hero p{font-size:18px;color:rgba(255,255,255,.75);line-height:1.7;}
 .blog-grid-section{padding:80px 0;}
-.blog-grid-inner{max-width:1200px;margin:0 auto;padding:0 24px;}
 .blog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;}
 .blog-card{display:flex;flex-direction:column;background:var(--white);border-radius:var(--radius-md);border:1px solid var(--brand-border);overflow:hidden;transition:box-shadow .2s,transform .2s;text-decoration:none;color:inherit;}
 .blog-card:hover{box-shadow:var(--shadow-lg);transform:translateY(-2px);}
@@ -51,15 +50,17 @@ function formatDate(date: Date) {
 
 <!-- PAGE HERO -->
 <section class="page-hero">
-  <div class="page-hero-inner">
-    <h1>Blog</h1>
-    <p>Insights on CGM technology, manufacturing models, regulatory compliance, and healthcare business strategy.</p>
+  <div class="container">
+    <div class="page-hero-inner">
+      <h1>Blog</h1>
+      <p>Insights on CGM technology, manufacturing models, regulatory compliance, and healthcare business strategy.</p>
+    </div>
   </div>
 </section>
 
 <!-- BLOG GRID — auto-populated from src/content/blog/ -->
 <section class="blog-grid-section">
-  <div class="blog-grid-inner">
+  <div class="container">
     {posts.length === 0 ? (
       <p style="text-align:center;color:var(--brand-gray);padding:60px 0;">No posts yet. Add Markdown files to <code>src/content/blog/</code>.</p>
     ) : (
