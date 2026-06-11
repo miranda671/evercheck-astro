@@ -1,0 +1,87 @@
+---
+// Nav.astro — edit this file to update navigation on all pages
+---
+<nav class="nav" role="navigation" aria-label="Main navigation">
+  <div class="container nav-inner">
+    <div class="logo">
+      <a href="/" aria-label="EverCheck Home">
+        <img src="/evercheck-logo.png" alt="EverCheck" class="logo-img">
+      </a>
+    </div>
+
+    <!-- Desktop nav -->
+    <div class="nav-links" id="nav-links">
+      <div class="nav-item">
+        <a href="/what-is-cgms">CGMS <span class="arrow" aria-hidden="true"></span></a>
+        <div class="nav-dropdown">
+          <a href="/what-is-cgms">What is CGMS?</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="/continuous-glucose-monitor">Product <span class="arrow" aria-hidden="true"></span></a>
+        <div class="nav-dropdown">
+          <a href="/continuous-glucose-monitor">EverCheck CGMS</a>
+          <a href="/cgm-patient-app">EverCheck patient app</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="/cgm-skd">Solutions <span class="arrow" aria-hidden="true"></span></a>
+        <div class="nav-dropdown">
+          <a href="/cgm-skd">SKD/CKD</a>
+          <a href="/cgm-oem">OEM/ODM</a>
+          <a href="/cgm-distribution">Become a distributor</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="/about-us">Company <span class="arrow" aria-hidden="true"></span></a>
+        <div class="nav-dropdown">
+          <a href="/about-us">About us</a>
+          <a href="/contact">Contact us</a>
+          <a href="/blog">Blog</a>
+          <a href="/certifications">Certifications &amp; Validations</a>
+        </div>
+      </div>
+      <a href="/contact" class="btn btn-primary">Contact us</a>
+    </div>
+
+    <!-- Hamburger (mobile) -->
+    <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav-mobile" aria-label="Open navigation menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+
+  <!-- Mobile dropdown -->
+  <div class="nav-mobile" id="nav-mobile" aria-hidden="true">
+    <div class="nav-mobile-item">
+      <a href="/what-is-cgms">CGMS</a>
+      <div class="nav-mobile-sub">
+        <a href="/what-is-cgms">What is CGMS?</a>
+      </div>
+    </div>
+    <div class="nav-mobile-item">
+      <a href="/continuous-glucose-monitor">Product</a>
+      <div class="nav-mobile-sub">
+        <a href="/continuous-glucose-monitor">EverCheck CGMS</a>
+        <a href="/cgm-patient-app">EverCheck patient app</a>
+      </div>
+    </div>
+    <div class="nav-mobile-item">
+      <a href="/cgm-skd">Solutions</a>
+      <div class="nav-mobile-sub">
+        <a href="/cgm-skd">SKD/CKD</a>
+        <a href="/cgm-oem">OEM/ODM</a>
+        <a href="/cgm-distribution">Become a distributor</a>
+      </div>
+    </div>
+    <div class="nav-mobile-item">
+      <a href="/about-us">Company</a>
+      <div class="nav-mobile-sub">
+        <a href="/about-us">About us</a>
+        <a href="/contact">Contact us</a>
+        <a href="/blog">Blog</a>
+        <a href="/certifications">Certifications &amp; Validations</a>
+      </div>
+    </div>
+    <a href="/contact" class="btn btn-primary">Contact us</a>
+  </div>
+</nav>
