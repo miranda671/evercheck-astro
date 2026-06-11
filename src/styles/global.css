@@ -374,15 +374,6 @@ img { max-width: 100%; height: auto; display: block; }
 .form-submit { margin-top: 8px; }
 .form-submit .btn { width: 100%; justify-content: center; padding: 16px; }
 
-/* ===== DISTRIBUTION HERO ===== */
-.distribution-hero,
-.cgm-distribution .hero {
-  min-height: 70vh;
-  display: flex; align-items: center; justify-content: center;
-  position: relative; overflow: hidden;
-  padding: 140px 24px 100px;
-}
-
 @media (max-width: 768px) {
   .cards-4 { grid-template-columns: 1fr !important; gap: 20px !important; }
   .become-grid { grid-template-columns: 1fr !important; gap: 32px !important; }
