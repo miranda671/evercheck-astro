@@ -23,7 +23,7 @@ const readTime = Math.max(1, Math.round(wordCount / 200));
 ---
 <Base title={`${post.data.title} — EverCheck`} description={post.data.description}>
 
-<style>
+<style is:global>
 .blog-hero{background:linear-gradient(135deg,var(--brand-blue) 0%,#4a9fd0 100%);padding:140px 0 80px;color:var(--white);}
 .blog-hero-inner{max-width:800px;margin:0 auto;padding:0 24px;}
 .blog-hero h1{font-size:40px;font-weight:700;letter-spacing:-.8px;margin-bottom:16px;line-height:1.2;}
