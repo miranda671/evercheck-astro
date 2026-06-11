@@ -1,0 +1,481 @@
+---
+import Base from '../layouts/Base.astro';
+
+---
+<Base
+  title="CGM Certifications & Validations | EverCheck"
+  description="Building your own CGM brand? We provide certifications, validation reports, and regulatory documentation to support compliance preparation and market filing."
+>
+<style>
+body {
+            font-family: 'DM Sans', system-ui, -apple-system, sans-serif;
+            color: var(--brand-black);
+            font-size: 16px;
+            line-height: 1.75;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* ========== Typography ========== */
+        h1 {
+            font-size: 52px;
+            font-weight: 700;
+            letter-spacing: -1.5px;
+            line-height: 1.15;
+            color: var(--brand-black);
+        }
+
+        h2 {
+            font-size: 36px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            line-height: 1.2;
+            color: var(--brand-black);
+        }
+
+        h3 {
+            font-size: 28px;
+            font-weight: 700;
+            letter-spacing: -0.6px;
+            line-height: 1.3;
+            color: var(--brand-black);
+        }
+
+        h4 {
+            font-size: 17px;
+            font-weight: 600;
+            line-height: 1.4;
+            color: var(--brand-black);
+        }
+
+        p {
+            font-size: 16px;
+            line-height: 1.75;
+            color: var(--brand-gray);
+        }
+
+        /* ========== Buttons ========== */
+
+        
+
+/* ===== NAV DROPDOWN ===== */
+        .hero {
+            min-height: 70vh;
+            display: flex;
+            align-items: center;
+            background: url('factory-hero.jpg') center center / cover no-repeat;
+            position: relative; overflow: hidden;
+            border-bottom: 1px solid var(--brand-border);
+        }
+        .hero::before {
+            content: ''; position: absolute; inset: 0;
+            background: linear-gradient(180deg, rgba(20, 30, 45, 0.75) 0%, rgba(20, 30, 45, 0.55) 100%);
+            z-index: 0;
+        }
+        .hero-inner { position: relative; z-index: 1; text-align: center; max-width: 960px; margin: 0 auto; }
+        .hero h1 { margin-bottom: 20px; color: var(--white); }
+        .hero p {
+            font-size: 17px;
+            line-height: 1.7;
+            max-width: 640px;
+            margin: 0 auto 32px;
+            color: rgba(255,255,255,0.88);
+        }
+        
+        
+        
+
+        /* ========== Your Compliance, Simplified ========== */
+        .why-section {
+            padding: 120px 0;
+            background: var(--white);
+        }
+
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+            margin-top: 72px;
+        }
+
+        .why-card {
+            text-align: center;
+            padding: 0 16px;
+        }
+
+        .why-card-icon {
+            width: 56px;
+            height: 56px;
+            border-radius: 14px;
+            background: rgba(128,188,226,0.10);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 18px;
+        }
+
+        .why-card-icon svg {
+            width: 26px;
+            height: 26px;
+            stroke: var(--brand-blue);
+            fill: none;
+            stroke-width: 1.8;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        .why-card h4 {
+            font-size: 17px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--brand-black);
+        }
+
+        .why-card p {
+            font-size: 14px;
+            line-height: 1.6;
+            color: var(--brand-gray);
+        }
+
+        /* ========== How We Support ========== */
+        .support-section {
+            padding: 120px 0;
+            background: var(--brand-light-gray);
+        }
+
+        .support-steps {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            align-items: start;
+            gap: 0;
+            margin-top: 72px;
+            background: var(--white);
+            border: 1.5px solid var(--brand-border);
+            border-radius: 12px;
+            padding: 44px 40px 36px;
+            position: relative;
+        }
+
+        /* horizontal connector line running behind the number circles */
+        .support-steps::before {
+            content: '';
+            position: absolute;
+            top: 68px;
+            left: calc(50% - (100% - 46px) / 2);
+            width: calc(100% - 92px);
+            height: 2px;
+            background: var(--brand-border);
+            z-index: 0;
+        }
+
+        .support-step {
+            text-align: center;
+            position: relative;
+        }
+
+        .support-step-num {
+            width: 46px;
+            height: 46px;
+            border-radius: 50%;
+            background: #80bce2;
+            color: var(--white);
+            font-size: 20px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 18px;
+            box-shadow: 0 1px 4px rgba(128,188,226,0.3);
+            border: 3px solid var(--white);
+        }
+
+        .support-step h4 {
+            font-size: 17px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: var(--brand-black);
+        }
+
+        .support-step p {
+            font-size: 14px;
+            line-height: 1.65;
+            color: var(--brand-gray);
+        }
+
+        .support-arrow {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding-top: 12px;
+        }
+
+        .support-arrow svg {
+            width: 36px;
+            height: 20px;
+        }
+
+        /* ========== Certifications Gallery ========== */
+        .certifications-section {
+            padding: 120px 0;
+            background: var(--white);
+        }
+
+        .certifications-section .section-header {
+            text-align: center;
+            margin-bottom: 72px;
+        }
+
+        .certifications-section .section-header h2 {
+            margin-bottom: 12px;
+        }
+
+        .certifications-section .section-header p {
+            max-width: 640px;
+            margin: 0 auto;
+        }
+
+        .cert-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 28px;
+        }
+
+        .cert-card {
+            background: var(--white);
+            border: 1px solid var(--brand-border);
+            border-radius: 16px;
+            padding: 36px 32px;
+            transition: all 0.25s ease;
+        }
+
+        .cert-card:hover {
+            box-shadow: var(--shadow-md);
+            border-color: rgba(128,188,226,0.3);
+            transform: translateY(-2px);
+        }
+
+        .cert-card-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            background: rgba(128,188,226,0.10);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 16px;
+        }
+
+        .cert-card-icon svg {
+            width: 24px;
+            height: 24px;
+            stroke: var(--brand-blue);
+            fill: none;
+            stroke-width: 1.8;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        .cert-card h4 {
+            font-size: 17px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: var(--brand-black);
+        }
+
+        .cert-card p {
+            font-size: 15px;
+            line-height: 1.65;
+            color: var(--brand-gray);
+        }
+
+        /* ========== Footer ========== */
+
+        /* ========== Responsive ========== */
+
+    /* ===== FOOTER CTA ===== */
+</style>
+
+<!-- ==================== NAVIGATION ==================== -->
+
+
+<!-- ==================== HERO SECTION ==================== -->
+<section class="hero">
+    <div class="container">
+        <div class="hero-inner">
+            <h1>CGM certifications &amp; validations</h1>
+            <p>Our CGM systems are developed, tested, and manufactured under certified quality management and international standards. We maintain a full suite of validation reports, test records, and compliance certificates, all available to support your CE-MDR, FDA, or other regulatory submissions.</p>
+            <a href="/contact" class="btn btn-primary">Contact us</a>
+        </div>
+    </div>
+</section>
+
+<!-- ==================== YOUR COMPLIANCE, SIMPLIFIED ==================== -->
+<section class="why-section">
+    <div class="container">
+        <div class="section-header" style="text-align:center;">
+            <h2>Your compliance, simplified</h2>
+            <p class="section-desc" style="max-width:640px;margin:0 auto;">Struggling to navigate local regulations? Our CGMS comes with a complete package of documentation that helps you accelerate submissions, reduce review cycles, and get to market faster.</p>
+        </div>
+        <div class="why-grid">
+            <div class="why-card">
+                <div class="why-card-icon">
+                    <svg viewBox="0 0 24 24"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+                </div>
+                <h4>Accelerate regulatory filing</h4>
+                <p>Pre-built validation documentation helps you fast-track CE-MDR, FDA, and other market entry submissions.</p>
+            </div>
+            <div class="why-card">
+                <div class="why-card-icon">
+                    <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                </div>
+                <h4>Reduce compliance risk</h4>
+                <p>Audit-ready test reports from ISO13485-certified facilities give you confidence during regulatory reviews and partner audits.</p>
+            </div>
+            <div class="why-card">
+                <div class="why-card-icon">
+                    <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+                </div>
+                <h4>Build brand trust</h4>
+                <p>Well-documented quality systems and validated performance data strengthen your brand's credibility with healthcare professionals.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ==================== HOW WE SUPPORT ==================== -->
+<section class="support-section">
+    <div class="container">
+        <div class="section-header" style="text-align:center;">
+            <h2>How do we support your compliance preparation?</h2>
+            <p class="section-desc" style="max-width:640px;margin:0 auto;">As a CGM manufacturer, we maintain structured documentation that can be shared with qualified partners under NDA to support your regulatory filing.</p>
+        </div>
+        <div class="support-steps">
+            <div class="support-step">
+                <div class="support-step-num">1</div>
+                <h4>You request the documents</h4>
+                <p>Tell us which certifications, test reports, or validation documents you need for your target market.</p>
+            </div>
+            <div class="support-step">
+                <div class="support-step-num">2</div>
+                <h4>We compile and deliver</h4>
+                <p>We provide the complete technical file package, including test results, certificates, and supporting study data, formatted for regulatory submission.</p>
+            </div>
+            <div class="support-step">
+                <div class="support-step-num">3</div>
+                <h4>You submit to authorities</h4>
+                <p>Your team integrates the documentation into your own regulatory dossier and files with the relevant health authority in your market.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ==================== CERTIFICATIONS GALLERY ==================== -->
+<section class="certifications-section">
+    <div class="container">
+        <div class="section-header">
+            <h2>Validation & Certification gallery</h2>
+            <p class="section-desc">We hold all necessary certifications and validation reports to support your regulatory submissions. Here are a few of them below.</p>
+        </div>
+
+        <div class="cert-grid">
+            <div class="cert-card">
+                <div class="cert-card-icon">
+                    <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                </div>
+                <h4>ISO13485 Certificate</h4>
+                <p>Certification of our quality management system for the design, development, and manufacturing of CGMS.</p>
+            </div>
+            <div class="cert-card">
+                <div class="cert-card-icon">
+                    <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/></svg>
+                </div>
+                <h4>Cytotoxicity report</h4>
+                <p>Confirms that materials contacting the patient's skin do not cause cell death or toxic reactions.</p>
+            </div>
+            <div class="cert-card">
+                <div class="cert-card-icon">
+                    <svg viewBox="0 0 24 24"><path d="M18 20h-3a1 1 0 0 1-1-1l-5-9a1 1 0 0 1 1-1h3a1 1 0 0 1 1 1l5 9a1 1 0 0 1-1 1z"/><path d="M6 20l5-9"/></svg>
+                </div>
+                <h4>Sensitization report</h4>
+                <p>Evaluates whether any component of the CGM system may cause allergic reactions or skin sensitization after repeated contact.</p>
+            </div>
+            <div class="cert-card">
+                <div class="cert-card-icon">
+                    <svg viewBox="0 0 24 24"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+                </div>
+                <h4>Systemic toxicity report</h4>
+                <p>Testing related to potential harmful biological effects after systemic exposure to product materials.</p>
+            </div>
+            <div class="cert-card">
+                <div class="cert-card-icon">
+                    <svg viewBox="0 0 24 24"><path d="M10 11a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z"/><path d="M14.5 13.5A4.95 4.95 0 0 1 15 12a5 5 0 0 0-5-5 4.96 4.96 0 0 0-2.5.67M19.73 18.27A5 5 0 0 0 19 13.5 5 5 0 0 0 15 9.5M4.93 19.07A5 5 0 0 1 5 14.5a5 5 0 0 0 .5 2.23"/></svg>
+                </div>
+                <h4>Irritation report</h4>
+                <p>Determines whether the sensor, adhesive, or other skin-contacting materials cause redness, swelling, or tissue damage.</p>
+            </div>
+            <div class="cert-card">
+                <div class="cert-card-icon">
+                    <svg viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+                </div>
+                <h4>MARD clinical performance</h4>
+                <p>Summarizes clinical study data demonstrating the Mean Absolute Relative Difference (MARD) of our CGM system, a key accuracy metric.</p>
+            </div>
+            <div class="cert-card">
+                <div class="cert-card-icon">
+                    <svg viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+                </div>
+                <h4>Biocompatibility evaluation</h4>
+                <p>Assessment of biological safety and compatibility between the device and the human body.</p>
+            </div>
+            <div class="cert-card">
+                <div class="cert-card-icon">
+                    <svg viewBox="0 0 24 24"><line x1="12" y1="22" x2="12" y2="2"/><polyline points="19 15 12 22 5 15"/><path d="M2 10l5-5 5 5"/><path d="M22 10l-5-5-5 5"/></svg>
+                </div>
+                <h4>Sterilization validation</h4>
+                <p>Documents that our sterilization process consistently achieves a sterility assurance level (SAL).</p>
+            </div>
+            <div class="cert-card">
+                <div class="cert-card-icon">
+                    <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+                </div>
+                <h4>Factory calibration validation</h4>
+                <p>Proves that our in-house calibration process consistently sets sensor accuracy before shipment, reducing or eliminating fingerstick calibration.</p>
+            </div>
+            <div class="cert-card">
+                <div class="cert-card-icon">
+                    <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                </div>
+                <h4>Stability & shelf-life validation</h4>
+                <p>Data from real-time and accelerated aging studies confirming sensor performance and battery life over the labeled shelf life.</p>
+            </div>
+            <div class="cert-card">
+                <div class="cert-card-icon">
+                    <svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+                </div>
+                <h4>Chemical characterization report</h4>
+                <p>Analysis and identification of chemical substances associated with product materials.</p>
+            </div>
+            <div class="cert-card">
+                <div class="cert-card-icon">
+                    <svg viewBox="0 0 24 24"><path d="M10 2v7.31"/><path d="M14 9.3V1.99"/><path d="M8.5 2h7"/><path d="M14 9.3a6.5 6.5 0 1 1-4 0"/><path d="M10 14.5a2 2 0 1 1-4 0 2 2 0 0 1 4 0z"/><path d="M18 14.5a2 2 0 1 1-4 0 2 2 0 0 1 4 0z"/></svg>
+                </div>
+                <h4>Leachables testing report</h4>
+                <p>Measures potential chemicals that may leach from sensor materials into the body under simulated use conditions, supporting biocompatibility.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ==================== FOOTER ==================== -->
+
+<!-- FOOTER CTA -->
+<section class="section" id="contact">
+  <div class="container">
+    <div class="footer-cta">
+      <h2>Your long-term B2B CGM manufacturing partner</h2>
+      <p>We combine self-developed CGM technologies with scalable manufacturing infrastructure to support healthcare brands worldwide.</p>
+      <a href="mailto:contact@evercheck.bio" class="btn btn-primary">Contact us now</a>
+    </div>
+  </div>
+</section>
+
+</Base>
