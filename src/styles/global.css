@@ -239,7 +239,7 @@ img { max-width: 100%; height: auto; display: block; }
 .footer-bottom-links a:hover { color: var(--brand-black); }
 
 /* ===== FAQ ACCORDION ===== */
-.faq-list { display: flex; flex-direction: column; gap: 12px; }
+.faq-list { display: flex; flex-direction: column; gap: 12px; max-width: 800px; margin: 0 auto; }
 .faq-item {
   background: var(--white); border: 1px solid var(--brand-border);
   border-radius: var(--radius-md); overflow: hidden;
