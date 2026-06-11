@@ -1,0 +1,127 @@
+---
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const {
+  title,
+  description = 'EverCheck — B2B CGM manufacturer for OEM, SKD, and healthcare partnerships worldwide.',
+} = Astro.props;
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="/favicon-32.png" sizes="32x32">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <title>{title}</title>
+  <meta name="description" content={description}>
+</head>
+<body>
+
+<Nav />
+<slot />
+<Footer />
+
+<script>
+(function () {
+  'use strict';
+
+  /* NAV TOGGLE */
+  var toggle = document.getElementById('nav-toggle');
+  var mobileNav = document.getElementById('nav-mobile');
+  if (toggle && mobileNav) {
+    toggle.addEventListener('click', function () {
+      var open = mobileNav.classList.toggle('open');
+      toggle.classList.toggle('open', open);
+      toggle.setAttribute('aria-expanded', String(open));
+      mobileNav.setAttribute('aria-hidden', String(!open));
+      document.body.style.overflow = open ? 'hidden' : '';
+    });
+    mobileNav.querySelectorAll('a').forEach(function (link) {
+      link.addEventListener('click', function () {
+        mobileNav.classList.remove('open');
+        toggle.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+        mobileNav.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+      });
+    });
+    document.addEventListener('click', function (e) {
+      if (!toggle.contains(e.target) && !mobileNav.contains(e.target)) {
+        mobileNav.classList.remove('open');
+        toggle.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+        mobileNav.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+      }
+    });
+  }
+
+  /* FAQ */
+  document.querySelectorAll('.faq-question').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var item = btn.closest('.faq-item');
+      var isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach(function (el) {
+        el.classList.remove('open');
+        el.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+      });
+      if (!isOpen) { item.classList.add('open'); btn.setAttribute('aria-expanded', 'true'); }
+    });
+  });
+
+  /* SCROLL ANIMATIONS */
+  if ('IntersectionObserver' in window) {
+    var obs = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    ['fade-up','receive-card','require-card','process-step'].forEach(function (cls) {
+      document.querySelectorAll('.' + cls).forEach(function (el) { obs.observe(el); });
+    });
+    var appObs = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { e.target.classList.add('slide-in'); appObs.unobserve(e.target); }
+      });
+    }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.app-feature-inner').forEach(function (el) { appObs.observe(el); });
+  } else {
+    ['fade-up','receive-card','require-card','process-step','app-feature-inner'].forEach(function (cls) {
+      document.querySelectorAll('.' + cls).forEach(function (el) { el.classList.add('visible'); });
+    });
+  }
+
+  /* BLOG TOC */
+  var tocLinks = document.querySelectorAll('.blog-toc a');
+  if (tocLinks.length && 'IntersectionObserver' in window) {
+    var tocObs = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) {
+          tocLinks.forEach(function (l) { l.classList.remove('active'); });
+          var a = document.querySelector('.blog-toc a[href="#' + e.target.id + '"]');
+          if (a) a.classList.add('active');
+        }
+      });
+    }, { rootMargin: '-10% 0px -80% 0px', threshold: 0 });
+    tocLinks.forEach(function (l) {
+      var el = document.getElementById(l.getAttribute('href').replace('#',''));
+      if (el) tocObs.observe(el);
+    });
+  }
+})();
+</script>
+
+</body>
+</html>
