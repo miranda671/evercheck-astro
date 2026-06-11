@@ -6,209 +6,6 @@ import Base from '../layouts/Base.astro';
   title="EverCheck Continuous Glucose Monitoring System | China CGM Supplier"
   description="Boost your healthcare business with our EverCheck continuous glucose monitors, featuring MARD <8%, lightweight painfree wear, IPX8 waterproof design and smart sensors."
 >
-<style>
-* { margin:0; padding:0; box-sizing:border-box; }
-html { scroll-behavior:smooth; }
-body {
-  font-family: 'DM Sans', system-ui, -apple-system, sans-serif;
-  color:var(--brand-black);
-  background:var(--white);
-  line-height:1.6;
-  -webkit-font-smoothing:antialiased;
-}
-/* ===== NAV ===== */
-
-/* ===== NAV DROPDOWN ===== */
-/* ===== PRODUCT HERO ===== */
-.product-hero {
-  padding:140px 0 80px;
-  background:linear-gradient(180deg, #f0f6fb 0%, var(--white) 100%);
-  position:relative; overflow:hidden;
-}
-.product-hero::before {
-  content:''; position:absolute; top:-200px; right:-100px;
-  width:600px; height:600px; border-radius:50%;
-  background:radial-gradient(circle, rgba(128,188,226,0.12) 0%, transparent 70%);
-  z-index:0;
-}
-.product-hero-grid {
-  display:grid; grid-template-columns:1fr 1fr; gap:64px;
-  align-items:center; position:relative; z-index:1;
-}
-.product-hero-content h1 {
-  font-size:42px; font-weight:700; line-height:1.2;
-  letter-spacing:-1.2px; margin-bottom:24px; color:var(--brand-black);
-}
-.product-hero-content p {
-  font-size:17px; line-height:1.75; color:var(--brand-gray);
-  margin-bottom:32px;
-}
-.product-hero-cta { margin-bottom:40px; }
-.product-hero-note {
-  font-size:13px; line-height:1.7; color:var(--brand-gray);
-  border-top:1px solid var(--brand-border); padding-top:20px;
-}
-.product-hero-note strong { color:var(--brand-black); font-weight:600; }
-.product-hero-visual {
-  position:relative; height:480px; border-radius:var(--radius-lg);
-  background:var(--brand-light-gray); display:flex;
-  align-items:center; justify-content:center; overflow:hidden;
-}
-.product-hero-visual img {
-  max-width:95%; max-height:95%; object-fit:contain;
-}
-
-/* ===== SECTIONS COMMON ===== */
-/* ===== APP FEATURES ===== */
-.app-features-list { display:flex; flex-direction:column; gap:0; }
-.app-feature-row {
-  background:#edf4fa;
-}
-.app-feature-row:nth-child(even) { background:var(--brand-black); }
-.app-feature-row .app-feature-inner {
-  display:grid; grid-template-columns:1fr 1fr; gap:64px; align-items:center;
-  max-width:1200px; margin:0 auto; padding:56px 24px;
-  opacity:0; transform:translateX(-60px);
-  transition:opacity 0.7s cubic-bezier(0.25,0.46,0.45,0.94), transform 0.7s cubic-bezier(0.25,0.46,0.45,0.94);
-}
-.app-feature-inner.slide-in {
-  opacity:1; transform:translateX(0);
-}
-.app-feature-row.reverse .app-feature-inner {
-  direction:rtl;
-  transform:translateX(60px);
-}
-.app-feature-row.reverse .app-feature-inner.slide-in {
-  transform:translateX(0);
-}
-.app-feature-row .app-feature-inner > * { padding-left:48px; padding-right:48px; }
-.app-feature-row.reverse .app-feature-inner > * { direction:ltr; }
-.app-feature-img {
-  border-radius:var(--radius-lg); overflow:hidden;
-  display:flex;
-  align-items:center; justify-content:center;
-  padding:20px;
-  background:transparent;
-}
-.app-feature-img img {
-  max-width:300px; max-height:560px; width:auto; height:auto;
-  object-fit:contain;
-}
-.app-feature-text {
-  display:flex; flex-direction:column;
-  justify-content:center; align-items:flex-start;
-}
-.app-feature-text h4 {
-  font-size:26px; font-weight:700; margin-bottom:16px;
-  color:var(--brand-black); letter-spacing:-0.4px;
-}
-.app-feature-text p {
-  font-size:17px; line-height:1.8; color:var(--brand-gray); max-width:480px;
-}
-.app-feature-row:nth-child(even) .app-feature-text h4 { color:var(--white); }
-.app-feature-row:nth-child(even) .app-feature-text p { color:rgba(255,255,255,0.75); }
-
-/* ===== KEY SPECS ===== */
-.specs-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:28px; }
-.spec-card {
-  background:var(--white); border-radius:var(--radius-lg);
-  padding:32px 28px; border:1px solid var(--brand-border);
-  transition:all 0.3s ease;
-}
-.spec-card:hover { box-shadow:var(--shadow-md); border-color:transparent; }
-.spec-card .spec-icon {
-  width:40px; height:40px; border-radius:var(--radius-sm);
-  background:rgba(128,188,226,0.10); display:flex;
-  align-items:center; justify-content:center; margin-bottom:16px;
-}
-.spec-card .spec-icon svg {
-  width:20px; height:20px; stroke:var(--brand-blue); fill:none;
-  stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round;
-}
-.spec-card .spec-value {
-  font-size:28px; font-weight:700; color:var(--brand-blue);
-  margin-bottom:8px; letter-spacing:-0.5px;
-}
-.spec-card .spec-value span { font-size:28px; font-weight:700; color:var(--brand-blue); }
-.spec-card h4 { font-size:15px; font-weight:600; margin-bottom:6px; color:var(--brand-black); }
-.spec-card p { font-size:14px; line-height:1.6; color:var(--brand-gray); }
-
-/* ===== SYSTEM ANATOMY ===== */
-.anatomy-single-image {
-  max-width: 1200px;
-  margin: 0 auto;
-  text-align: center;
-}
-.anatomy-single-image img {
-  width: 100%;
-  max-width: 100%;
-  height: auto;
-  display: block;
-  margin: 0 auto;
-}
-
-/* ===== TECH SPECS TABLE ===== */
-.specs-table-wrap {
-  background:var(--white); border-radius:var(--radius-lg);
-  border:1px solid var(--brand-border); overflow-x:auto; -webkit-overflow-scrolling:touch;
-}
-.specs-table { width:100%; border-collapse:collapse; }
-.specs-table tr { border-bottom:1px solid var(--brand-border); }
-.specs-table tr:last-child { border-bottom:none; }
-.specs-table td {
-  padding:16px 24px; font-size:15px;
-}
-.specs-table td:first-child {
-  color:var(--brand-gray); width:45%;
-  background:var(--brand-light-gray);
-}
-.specs-table td:last-child {
-  color:var(--brand-black); font-weight:500;
-}
-
-/* ===== HOW TO USE ===== */
-.steps-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:28px; margin-bottom:80px; }
-.step-card {
-  background:var(--white); border-radius:var(--radius-lg);
-  padding:36px 32px; border:1px solid var(--brand-border);
-  text-align:center; transition:all 0.3s ease;
-}
-.step-card:hover { box-shadow:var(--shadow-md); border-color:transparent; }
-.step-icon {
-  width:64px; height:64px; border-radius:50%;
-  background:rgba(128,188,226,0.10); display:flex;
-  align-items:center; justify-content:center; margin:0 auto 20px;
-}
-.step-icon svg { width:28px; height:28px; stroke:var(--brand-blue); fill:none; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round; }
-.step-card h4 { font-size:18px; font-weight:600; margin-bottom:12px; }
-.step-card p { font-size:14px; line-height:1.7; color:var(--brand-gray); }
-
-/* Why choose cards */
-.why-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:28px; }
-.why-card {
-  background:var(--white); border-radius:var(--radius-lg);
-  padding:36px 32px; border:1px solid var(--brand-border);
-  transition:all 0.3s ease;
-}
-.why-card:hover { box-shadow:var(--shadow-md); border-color:transparent; }
-.why-card .why-icon {
-  width:48px; height:48px; border-radius:var(--radius-sm);
-  background:rgba(128,188,226,0.10); display:flex;
-  align-items:center; justify-content:center; margin-bottom:20px;
-}
-.why-card .why-icon svg {
-  width:24px; height:24px; stroke:var(--brand-blue); fill:none;
-  stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round;
-}
-.why-card h4 { font-size:17px; font-weight:600; margin-bottom:12px; }
-.why-card p { font-size:14px; line-height:1.7; color:var(--brand-gray); }
-
-/* ===== FAQS ===== */
-/* ===== FOOTER ===== */
-
-/* ===== RESPONSIVE ===== */
-/* ===== FOOTER CTA ===== */
-</style>
 
 <!-- NAV -->
 
@@ -221,7 +18,7 @@ body {
         <h1>EverCheck continuous glucose monitoring system</h1>
         <p>Focused exclusively on B2B partnerships, we develop reliable continuous glucose monitoring (CGM) solutions with industry-leading accuracy below 8% MARD for all types of healthcare providers worldwide. Flexible and cost-efficient, our OEM/SKD models are designed to support and scale your CGM business.</p>
         <div class="product-hero-cta">
-          <a href="#contact" class="btn btn-primary">Contact us</a>
+          <a href="/contact" class="btn btn-primary">Contact us</a>
         </div>
         <div class="product-hero-note">
           <strong>Note:</strong> This product is designed for continuous or periodic monitoring of glucose levels in the interstitial fluid of patients with diabetes. It has been tested in adult patients (18 years and older) only. Commercialization in pediatric, pregnant, or other special populations may require additional local trials per regional regulations.
@@ -609,7 +406,7 @@ body {
     <div class="footer-cta">
       <h2>Your long-term B2B CGM manufacturing partner</h2>
       <p>We combine self-developed CGM technologies with scalable manufacturing infrastructure to support healthcare brands worldwide.</p>
-      <a href="mailto:contact@evercheck.bio" class="btn btn-primary">Contact us now</a>
+      <a href="/contact" class="btn btn-primary">Contact us now</a>
     </div>
   </div>
 </section>
