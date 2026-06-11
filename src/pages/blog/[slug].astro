@@ -21,81 +21,22 @@ function formatDate(date: Date) {
 const wordCount = post.body.split(/\s+/).length;
 const readTime = Math.max(1, Math.round(wordCount / 200));
 ---
+
 <Base title={`${post.data.title} — EverCheck`} description={post.data.description}>
 
-<style is:global>
-.blog-hero{background:linear-gradient(135deg,var(--brand-blue) 0%,#4a9fd0 100%);padding:140px 0 80px;color:var(--white);}
-.blog-hero-inner{max-width:800px;margin:0 auto;padding:0 24px;}
-.blog-hero h1{font-size:40px;font-weight:700;letter-spacing:-.8px;margin-bottom:16px;line-height:1.2;}
-.blog-hero-meta{font-size:15px;color:rgba(255,255,255,.8);}
-.blog-body{padding:80px 0;display:grid;grid-template-columns:240px 1fr;gap:80px;align-items:start;}
-.blog-toc{position:sticky;top:100px;}
-.blog-toc h4{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.6px;color:var(--brand-gray);margin-bottom:16px;}
-.blog-toc ul{list-style:none;border-left:2px solid var(--brand-border);}
-.blog-toc li a{display:block;padding:6px 0 6px 16px;font-size:14px;color:var(--brand-gray);transition:all .2s;}
-.blog-toc li a:hover,.blog-toc li a.active{color:var(--brand-blue);border-left:2px solid var(--brand-blue);margin-left:-2px;}
-.blog-content{max-width:760px;}
-.blog-breadcrumb{display:flex;align-items:center;gap:6px;font-size:13px;color:var(--brand-gray);margin-bottom:40px;}
-.blog-breadcrumb a{color:var(--brand-gray);transition:color .2s;}
-.blog-breadcrumb a:hover{color:var(--brand-blue);}
-.blog-breadcrumb .sep{margin:0 2px;}
-/* Prose styles */
-.blog-content p{font-size:16px;line-height:1.8;color:#444;margin-bottom:20px;}
-.blog-content h2{font-size:26px;font-weight:700;color:var(--brand-black);margin:48px 0 16px;letter-spacing:-.3px;}
-.blog-content h3{font-size:20px;font-weight:600;color:var(--brand-black);margin:32px 0 12px;}
-.blog-content ul,.blog-content ol{margin:0 0 20px 24px;}
-.blog-content li{font-size:16px;line-height:1.75;color:#444;margin-bottom:8px;}
-.blog-content strong{font-weight:600;color:var(--brand-black);}
-.blog-content a{color:var(--brand-blue);text-decoration:underline;}
-.blog-content table{width:100%;border-collapse:collapse;margin:32px 0;font-size:14px;}
-.blog-content th{background:var(--brand-light-gray);padding:12px 16px;text-align:left;font-weight:600;border-bottom:2px solid var(--brand-border);}
-.blog-content td{padding:12px 16px;border-bottom:1px solid var(--brand-border);}
-.blog-content blockquote{border-left:4px solid var(--brand-blue);margin:24px 0;padding:16px 20px;background:rgba(128,188,226,.06);border-radius:0 8px 8px 0;}
-.blog-content blockquote p{margin:0;color:var(--brand-gray);}
-.tip-box{background:rgba(128,188,226,.08);border:1px solid rgba(128,188,226,.3);border-radius:var(--radius-md);padding:20px 24px;margin:32px 0;display:flex;gap:16px;align-items:flex-start;}
-.tip-icon{font-size:20px;flex-shrink:0;}
-.tip-box p{margin:0;font-size:15px;}
-.blog-table-wrap{overflow-x:auto;margin:32px 0;-webkit-overflow-scrolling:touch;}
-.blog-table{width:100%;border-collapse:collapse;min-width:500px;}
-.blog-table th{background:var(--brand-light-gray);padding:12px 16px;text-align:left;font-size:14px;font-weight:600;border-bottom:2px solid var(--brand-border);}
-.blog-table td{padding:12px 16px;border-bottom:1px solid var(--brand-border);font-size:14px;}
-.author-box{display:flex;gap:20px;padding:32px;background:var(--brand-light-gray);border-radius:var(--radius-md);margin:48px 0 32px;}
-.author-avatar{width:52px;height:52px;border-radius:50%;background:var(--brand-blue);color:var(--white);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:16px;flex-shrink:0;}
-.author-info h4{font-size:16px;font-weight:600;margin-bottom:4px;}
-.author-role{font-size:13px;color:var(--brand-blue);margin-bottom:8px;}
-.author-info p{font-size:14px;color:var(--brand-gray);line-height:1.6;margin:0;}
-.author-social{display:flex;gap:8px;margin-top:12px;}
-.author-social a{width:32px;height:32px;border-radius:50%;background:var(--brand-border);display:flex;align-items:center;justify-content:center;}
-.author-social svg{width:14px;height:14px;stroke:var(--brand-gray);fill:none;stroke-width:2;}
-.share-section{display:flex;align-items:center;gap:16px;padding:24px 0;border-top:1px solid var(--brand-border);}
-.share-section span{font-size:14px;font-weight:600;color:var(--brand-black);}
-.share-buttons{display:flex;gap:8px;}
-.share-btn{width:36px;height:36px;border-radius:50%;background:var(--brand-light-gray);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s;}
-.share-btn:hover{background:var(--brand-blue);}
-.share-btn:hover svg{stroke:var(--white);}
-.share-btn svg{width:16px;height:16px;stroke:var(--brand-gray);fill:none;stroke-width:2;}
-@media(max-width:768px){
-  .blog-body{grid-template-columns:1fr;padding:40px 16px;gap:0;}
-  .blog-toc{display:none;}
-  .blog-hero h1{font-size:26px;}
-  .blog-content h2{font-size:22px;}
-  .blog-content h3{font-size:18px;}
-}
-</style>
-
 <!-- BLOG HERO -->
-<section class="blog-hero">
+<section class="blog-detail-hero">
   <div class="container">
-    <div class="blog-hero-inner">
+    <div class="blog-detail-hero-inner">
       <h1>{post.data.title}</h1>
-      <p class="blog-hero-meta">{post.data.author} &middot; {formatDate(post.data.pubDate)} &middot; {readTime} min read</p>
+      <p class="blog-detail-hero-meta">{post.data.author} &middot; {formatDate(post.data.pubDate)} &middot; {readTime} min read</p>
     </div>
   </div>
 </section>
 
 <!-- BLOG BODY -->
 <div class="container">
-  <div class="blog-body">
+  <div class="blog-detail-body">
 
   <!-- SIDEBAR TOC (static — authors can update manually) -->
   <aside class="blog-toc">
@@ -103,9 +44,9 @@ const readTime = Math.max(1, Math.round(wordCount / 200));
   </aside>
 
   <!-- CONTENT -->
-  <article class="blog-content">
+  <article class="blog-detail-content">
 
-    <div class="blog-breadcrumb">
+    <div class="blog-detail-breadcrumb">
       <a href="/">Home</a>
       <span class="sep">&rsaquo;</span>
       <a href="/blog">Blog</a>
