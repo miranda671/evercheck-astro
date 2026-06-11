@@ -28,7 +28,7 @@ const readTime = Math.max(1, Math.round(wordCount / 200));
 .blog-hero-inner{max-width:800px;margin:0 auto;padding:0 24px;}
 .blog-hero h1{font-size:40px;font-weight:700;letter-spacing:-.8px;margin-bottom:16px;line-height:1.2;}
 .blog-hero-meta{font-size:15px;color:rgba(255,255,255,.8);}
-.blog-body{max-width:1200px;margin:0 auto;padding:80px 24px;display:grid;grid-template-columns:240px 1fr;gap:80px;align-items:start;}
+.blog-body{padding:80px 0;display:grid;grid-template-columns:240px 1fr;gap:80px;align-items:start;}
 .blog-toc{position:sticky;top:100px;}
 .blog-toc h4{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.6px;color:var(--brand-gray);margin-bottom:16px;}
 .blog-toc ul{list-style:none;border-left:2px solid var(--brand-border);}
@@ -85,14 +85,17 @@ const readTime = Math.max(1, Math.round(wordCount / 200));
 
 <!-- BLOG HERO -->
 <section class="blog-hero">
-  <div class="blog-hero-inner">
-    <h1>{post.data.title}</h1>
-    <p class="blog-hero-meta">{post.data.author} &middot; {formatDate(post.data.pubDate)} &middot; {readTime} min read</p>
+  <div class="container">
+    <div class="blog-hero-inner">
+      <h1>{post.data.title}</h1>
+      <p class="blog-hero-meta">{post.data.author} &middot; {formatDate(post.data.pubDate)} &middot; {readTime} min read</p>
+    </div>
   </div>
 </section>
 
 <!-- BLOG BODY -->
-<div class="blog-body">
+<div class="container">
+  <div class="blog-body">
 
   <!-- SIDEBAR TOC (static — authors can update manually) -->
   <aside class="blog-toc">
@@ -139,6 +142,7 @@ const readTime = Math.max(1, Math.round(wordCount / 200));
     </div>
 
   </article>
+  </div>
 </div>
 
 </Base>
