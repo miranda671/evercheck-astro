@@ -378,13 +378,15 @@ img { max-width: 100%; height: auto; display: block; }
   .cards-4 { grid-template-columns: 1fr !important; gap: 20px !important; }
   .become-grid { grid-template-columns: 1fr !important; gap: 32px !important; }
   .form-row { grid-template-columns: 1fr !important; gap: 12px !important; }
+  .bg-light { padding: 64px 0 !important; }
+  .bg-white { padding: 64px 0 !important; }
 }
 
 
 
 /* ===== PAGE HERO (distribution, oem, skd, etc.) ===== */
-.bg-light { background: var(--brand-light-gray); }
-.bg-white { background: var(--white); }
+.bg-light { background: var(--brand-light-gray); padding: 120px 0; }
+.bg-white { background: var(--white); padding: 120px 0; }
 .hidden { display: none; }
 .page-hero {
   min-height: 70vh;
