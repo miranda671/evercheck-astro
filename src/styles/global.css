@@ -921,6 +921,12 @@ img { max-width: 100%; height: auto; display: block; }
 .blog-toc ul { list-style: none; border-left: 2px solid var(--brand-border); }
 .blog-toc li a { display: block; padding: 6px 0 6px 16px; font-size: 14px; color: var(--brand-gray); transition: all .2s; }
 .blog-toc li a:hover, .blog-toc li a.active { color: var(--brand-blue); border-left: 2px solid var(--brand-blue); margin-left: -2px; }
+.toc-placeholder { padding: 8px 0 8px 16px; }
+.toc-placeholder p { font-size: 13px; color: var(--brand-gray); font-style: italic; margin: 0; }
+.toc-divider { border: none; border-top: 1px solid var(--brand-border); margin: 20px 0 16px; }
+.toc-related { list-style: none; border-left: 2px solid var(--brand-border); }
+.toc-related li a { display: block; padding: 6px 0 6px 16px; font-size: 13px; color: var(--brand-gray); transition: all 0.2s; }
+.toc-related li a:hover { color: var(--brand-blue); border-left: 2px solid var(--brand-blue); margin-left: -2px; }
 .blog-detail-content { max-width: 760px; }
 .blog-detail-breadcrumb { display: flex; align-items: center; gap: 6px; font-size: 13px; color: var(--brand-gray); margin-bottom: 40px; }
 .blog-detail-breadcrumb a { color: var(--brand-gray); transition: color .2s; }
